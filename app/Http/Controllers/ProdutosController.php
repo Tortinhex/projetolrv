@@ -23,13 +23,13 @@ class ProdutosController extends Controller
     	$input = $request->all();
     	Produto::create($input);
 
-    	return redirect('produtos');
+    	return redirect()->route('produtos');
     }
 
     public function destroy($id) {
     	Produto::find($id)->delete();
 
-    	return redirect('produtos');
+    	return redirect()->route('produtos');
     }
 
     public function edit($id){
@@ -41,7 +41,7 @@ class ProdutosController extends Controller
     public function update (ProdutoRequest $request, $id) {
     	$produto = Produto::find($id)->update($request->all());
 
-    	return redirect('produtos');
+    	return redirect()->route('produtos');
     }
 
 }
